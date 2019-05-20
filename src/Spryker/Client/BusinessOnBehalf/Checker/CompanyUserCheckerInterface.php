@@ -9,12 +9,12 @@ namespace Spryker\Client\BusinessOnBehalf\Checker;
 
 use Generated\Shared\Transfer\CustomerTransfer;
 
-interface CustomerCheckerInterface
+interface CompanyUserCheckerInterface
 {
     /**
      * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
      *
      * @return bool
      */
-    public function isCustomerChangeAllowed(CustomerTransfer $customerTransfer): bool;
+    public function isCompanyUserChangeAllowed(CustomerTransfer $customerTransfer): bool;
 }
