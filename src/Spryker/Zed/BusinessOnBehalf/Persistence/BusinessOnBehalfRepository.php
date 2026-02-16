@@ -51,6 +51,7 @@ class BusinessOnBehalfRepository extends AbstractRepository implements BusinessO
     {
         $companyUserQuery = $this->getFactory()->getCompanyUserQuery();
         // For BC reasons
+        /** @phpstan-ignore function.alreadyNarrowedType */
         if (method_exists($companyUserQuery, 'filterByIsActive')) {
             $companyUserQuery->filterByIsActive(true);
         }
@@ -81,6 +82,7 @@ class BusinessOnBehalfRepository extends AbstractRepository implements BusinessO
     {
         $companyUserQuery = $this->getFactory()->getCompanyUserQuery();
         // For BC reasons
+        /** @phpstan-ignore function.alreadyNarrowedType */
         if (method_exists($companyUserQuery, 'filterByIsActive')) {
             $companyUserQuery->filterByIsActive(true);
         }
