@@ -24,11 +24,6 @@ class BusinessOnBehalfToCompanyUserFacadeBridge implements BusinessOnBehalfToCom
         $this->companyUserFacade = $companyUserFacade;
     }
 
-    /**
-     * @param int $idCompanyUser
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function getCompanyUserById(int $idCompanyUser): CompanyUserTransfer
     {
         return $this->companyUserFacade->getCompanyUserById($idCompanyUser);

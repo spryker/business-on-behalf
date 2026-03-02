@@ -24,21 +24,12 @@ class CompanyUserReader implements CompanyUserReaderInterface
      */
     protected $companyUserFacade;
 
-    /**
-     * @param \Spryker\Zed\BusinessOnBehalf\Persistence\BusinessOnBehalfRepositoryInterface $repository
-     * @param \Spryker\Zed\BusinessOnBehalf\Dependency\Facade\BusinessOnBehalfToCompanyUserFacadeInterface $companyUserFacade
-     */
     public function __construct(BusinessOnBehalfRepositoryInterface $repository, BusinessOnBehalfToCompanyUserFacadeInterface $companyUserFacade)
     {
         $this->repository = $repository;
         $this->companyUserFacade = $companyUserFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserCollectionTransfer
-     */
     public function findActiveCompanyUsersByCustomerId(CustomerTransfer $customerTransfer): CompanyUserCollectionTransfer
     {
         $customerTransfer->requireIdCustomer();

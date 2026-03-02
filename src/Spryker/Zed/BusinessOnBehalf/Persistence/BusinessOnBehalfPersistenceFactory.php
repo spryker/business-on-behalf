@@ -18,9 +18,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class BusinessOnBehalfPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\CompanyUser\Persistence\SpyCompanyUserQuery
-     */
     public function getCompanyUserQuery(): SpyCompanyUserQuery
     {
         return $this->getProvidedDependency(BusinessOnBehalfDependencyProvider::PROPEL_QUERY_COMPANY_USER);

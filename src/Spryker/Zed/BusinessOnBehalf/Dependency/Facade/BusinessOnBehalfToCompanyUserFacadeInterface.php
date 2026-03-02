@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CompanyUserTransfer;
 
 interface BusinessOnBehalfToCompanyUserFacadeInterface
 {
-    /**
-     * @param int $idCompanyUser
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function getCompanyUserById(int $idCompanyUser): CompanyUserTransfer;
 }

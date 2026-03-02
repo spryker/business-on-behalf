@@ -16,9 +16,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class BusinessOnBehalfFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\BusinessOnBehalf\Checker\CompanyUserCheckerInterface
-     */
     public function createCustomerChecker(): CompanyUserCheckerInterface
     {
         return new CompanyUserChecker(
@@ -26,17 +23,11 @@ class BusinessOnBehalfFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\BusinessOnBehalf\Zed\BusinessOnBehalfStubInterface
-     */
     public function createZedBusinessOnBehalfStub(): BusinessOnBehalfStubInterface
     {
         return new BusinessOnBehalfStub($this->getZedRequestClient());
     }
 
-    /**
-     * @return \Spryker\Client\BusinessOnBehalf\Dependency\Client\BusinessOnBehalfToZedRequestClientInterface
-     */
     public function getZedRequestClient(): BusinessOnBehalfToZedRequestClientInterface
     {
         return $this->getProvidedDependency(BusinessOnBehalfDependencyProvider::CLIENT_ZED_REQUEST);

@@ -19,19 +19,11 @@ class CompanyUserWriter implements CompanyUserWriterInterface
      */
     protected $entityManager;
 
-    /**
-     * @param \Spryker\Zed\BusinessOnBehalf\Persistence\BusinessOnBehalfEntityManagerInterface $entityManager
-     */
     public function __construct(BusinessOnBehalfEntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserResponseTransfer
-     */
     public function setDefaultCompanyUser(CompanyUserTransfer $companyUserTransfer): CompanyUserResponseTransfer
     {
         $result = new CompanyUserResponseTransfer();
@@ -44,11 +36,6 @@ class CompanyUserWriter implements CompanyUserWriterInterface
         return $result;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function unsetDefaultCompanyUserByCustomer(CustomerTransfer $customerTransfer): CustomerTransfer
     {
         $customerTransfer = $this->entityManager->unsetDefaultCompanyUserByCustomer($customerTransfer);

@@ -24,21 +24,11 @@ class CompanyUserChecker implements CompanyUserCheckerInterface
         $this->companyUserChangeAllowedCheckPlugins = $companyUserChangeAllowedCheckPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return bool
-     */
     public function isCompanyUserChangeAllowed(CustomerTransfer $customerTransfer): bool
     {
         return $this->executeCompanyUserChangeAllowedCheckPlugins($customerTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return bool
-     */
     protected function executeCompanyUserChangeAllowedCheckPlugins(CustomerTransfer $customerTransfer): bool
     {
         foreach ($this->companyUserChangeAllowedCheckPlugins as $companyUserChangeAllowedCheckPlugin) {

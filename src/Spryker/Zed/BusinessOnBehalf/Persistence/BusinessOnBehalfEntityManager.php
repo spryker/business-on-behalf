@@ -49,11 +49,6 @@ class BusinessOnBehalfEntityManager extends AbstractEntityManager implements Bus
         return $companyUserTransfer->fromArray($defaultCompanyUser->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function unsetDefaultCompanyUserByCustomer(CustomerTransfer $customerTransfer): CustomerTransfer
     {
         $this->cleanupExistingIsDefaultFlag($customerTransfer);

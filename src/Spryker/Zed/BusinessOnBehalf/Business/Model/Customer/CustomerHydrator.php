@@ -23,10 +23,6 @@ class CustomerHydrator implements CustomerHydratorInterface
      */
     protected $companyUserFacade;
 
-    /**
-     * @param \Spryker\Zed\BusinessOnBehalf\Persistence\BusinessOnBehalfRepositoryInterface $businessOnBehalfRepository
-     * @param \Spryker\Zed\BusinessOnBehalf\Dependency\Facade\BusinessOnBehalfToCompanyUserFacadeInterface $companyUserFacade
-     */
     public function __construct(
         BusinessOnBehalfRepositoryInterface $businessOnBehalfRepository,
         BusinessOnBehalfToCompanyUserFacadeInterface $companyUserFacade
@@ -35,11 +31,6 @@ class CustomerHydrator implements CustomerHydratorInterface
         $this->companyUserFacade = $companyUserFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function hydrateCustomerWithCompanyUser(CustomerTransfer $customerTransfer): CustomerTransfer
     {
         if ($customerTransfer->getCompanyUserTransfer()) {

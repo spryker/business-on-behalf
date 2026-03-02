@@ -23,9 +23,6 @@ use Spryker\Client\BusinessOnBehalfExtension\Dependency\Plugin\CompanyUserChange
  */
 class CompanyUserCheckerTest extends Unit
 {
-    /**
-     * @return void
-     */
     public function testIsCompanyUserChangeAllowedReturnsTrueByDefault(): void
     {
         // Arrange
@@ -38,9 +35,6 @@ class CompanyUserCheckerTest extends Unit
         $this->assertTrue($isAllowed);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCompanyUserChangeAllowedWhenPluginStackReturnFalse(): void
     {
         // Arrange

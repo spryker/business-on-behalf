@@ -28,13 +28,6 @@ class BusinessOnBehalfBusinessTester extends Actor
 {
     use _generated\BusinessOnBehalfBusinessTesterActions;
 
-    /**
-     * @param \Spryker\Shared\Kernel\Transfer\AbstractTransfer $expected
-     * @param \Spryker\Shared\Kernel\Transfer\AbstractTransfer $actual
-     * @param string $message
-     *
-     * @return void
-     */
     public function assertTransferEquals(AbstractTransfer $expected, AbstractTransfer $actual, string $message = ''): void
     {
         $expectedArray = $expected->toArray();

@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\CustomerTransfer;
 
 interface BusinessOnBehalfEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer|null
-     */
     public function setDefaultCompanyUser(CompanyUserTransfer $companyUserTransfer): ?CompanyUserTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function unsetDefaultCompanyUserByCustomer(CustomerTransfer $customerTransfer): CustomerTransfer;
 }

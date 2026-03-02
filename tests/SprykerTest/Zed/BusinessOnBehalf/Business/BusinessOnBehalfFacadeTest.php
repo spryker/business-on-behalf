@@ -47,9 +47,6 @@ class BusinessOnBehalfFacadeTest extends Unit
      */
     protected $inactiveCompany;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -58,9 +55,6 @@ class BusinessOnBehalfFacadeTest extends Unit
         $this->inactiveCompany = $this->tester->haveInactiveCompany();
     }
 
-    /**
-     * @return void
-     */
     public function testExpandCustomerWithIsOnBehalf(): void
     {
         //Arrange
@@ -81,9 +75,6 @@ class BusinessOnBehalfFacadeTest extends Unit
         $this->tester->assertTransferEquals($expectedCustomer, $actualCustomer);
     }
 
-    /**
-     * @return void
-     */
     public function testExpandCustomerWithIsOnBehalfHavingNoCompanyUsers(): void
     {
         //Arrange
@@ -98,9 +89,6 @@ class BusinessOnBehalfFacadeTest extends Unit
         $this->tester->assertTransferEquals($actualCustomer, $expectedCustomer);
     }
 
-    /**
-     * @return void
-     */
     public function testFindActiveCompanyUsersByCustomerId(): void
     {
         //Arrange
@@ -130,9 +118,6 @@ class BusinessOnBehalfFacadeTest extends Unit
         $this->tester->assertCount($expectedCompanyUserAmount, $actualCompanyUserCollection->getCompanyUsers());
     }
 
-    /**
-     * @return void
-     */
     public function testSetDefaultCompanyUserPersistsData(): void
     {
         //Arrange
@@ -152,9 +137,6 @@ class BusinessOnBehalfFacadeTest extends Unit
         $this->assertTrue($companyUserFromDataBase->getIsDefault());
     }
 
-    /**
-     * @return void
-     */
     public function testSetDefaultCompanyUserToCustomerIfCompanyUserDefault(): void
     {
         //Arrange
@@ -176,9 +158,6 @@ class BusinessOnBehalfFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testSetDefaultCompanyUserToCustomerIfCompanyUserNotDefault(): void
     {
         //Arrange
@@ -197,9 +176,6 @@ class BusinessOnBehalfFacadeTest extends Unit
         $this->assertNull($customerTransfer->getCompanyUserTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testUnsetDefaultCompanyUserByCustomer(): void
     {
         //Arrange
@@ -226,20 +202,11 @@ class BusinessOnBehalfFacadeTest extends Unit
         $this->assertFalse($companyUserFromDataBase->getIsDefault());
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyUser\Business\CompanyUserFacadeInterface
-     */
     protected function getCompanyUserFacade(): CompanyUserFacadeInterface
     {
         return $this->tester->getLocator()->companyUser()->facade();
     }
 
-    /**
-     * @param int $amount
-     * @param array $seed
-     *
-     * @return array
-     */
     protected function haveCompanyUsers(int $amount, array $seed = []): array
     {
         $companyUsers = [];

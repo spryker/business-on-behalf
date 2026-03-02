@@ -26,17 +26,11 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class BusinessOnBehalfBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\BusinessOnBehalf\Business\Model\Customer\CustomerExpanderInterface
-     */
     public function createCustomerExpander(): CustomerExpanderInterface
     {
         return new CustomerExpander($this->getRepository());
     }
 
-    /**
-     * @return \Spryker\Zed\BusinessOnBehalf\Business\Model\CompanyUser\CompanyUserReaderInterface
-     */
     public function createCompanyUserReader(): CompanyUserReaderInterface
     {
         return new CompanyUserReader(
@@ -45,9 +39,6 @@ class BusinessOnBehalfBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\BusinessOnBehalf\Business\Model\CompanyUser\CompanyUserWriterInterface
-     */
     public function createCompanyUserWriter(): CompanyUserWriterInterface
     {
         return new CompanyUserWriter(
@@ -55,9 +46,6 @@ class BusinessOnBehalfBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\BusinessOnBehalf\Business\Model\Customer\CustomerHydratorInterface
-     */
     public function createCustomerHydrator(): CustomerHydratorInterface
     {
         return new CustomerHydrator(
@@ -66,9 +54,6 @@ class BusinessOnBehalfBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\BusinessOnBehalf\Dependency\Facade\BusinessOnBehalfToCompanyUserFacadeInterface
-     */
     public function getCompanyUserFacade(): BusinessOnBehalfToCompanyUserFacadeInterface
     {
         return $this->getProvidedDependency(BusinessOnBehalfDependencyProvider::FACADE_COMPANY_USER);

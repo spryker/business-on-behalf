@@ -20,19 +20,11 @@ class BusinessOnBehalfStub implements BusinessOnBehalfStubInterface
      */
     protected $zedRequestClient;
 
-    /**
-     * @param \Spryker\Client\BusinessOnBehalf\Dependency\Client\BusinessOnBehalfToZedRequestClientInterface $zedRequestClient
-     */
     public function __construct(BusinessOnBehalfToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserCollectionTransfer
-     */
     public function findActiveCompanyUsersByCustomerId(CustomerTransfer $customerTransfer): CompanyUserCollectionTransfer
     {
         /** @var \Generated\Shared\Transfer\CompanyUserCollectionTransfer $companyUserCollection */
@@ -44,11 +36,6 @@ class BusinessOnBehalfStub implements BusinessOnBehalfStubInterface
         return $companyUserCollection;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserResponseTransfer
-     */
     public function setDefaultCompanyUser(CompanyUserTransfer $companyUserTransfer): CompanyUserResponseTransfer
     {
         /** @var \Generated\Shared\Transfer\CompanyUserResponseTransfer $companyUserResponseTransfer */
@@ -60,11 +47,6 @@ class BusinessOnBehalfStub implements BusinessOnBehalfStubInterface
         return $companyUserResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function unsetDefaultCompanyUser(CustomerTransfer $customerTransfer): CustomerTransfer
     {
         $this->zedRequestClient->call(

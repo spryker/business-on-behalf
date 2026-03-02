@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\CompanyUserTransfer;
 
 interface BusinessOnBehalfRepositoryInterface
 {
-    /**
-     * @param int $idCustomer
-     *
-     * @return bool
-     */
     public function isOnBehalfByCustomerId(int $idCustomer): bool;
 
     /**
@@ -25,10 +20,5 @@ interface BusinessOnBehalfRepositoryInterface
      */
     public function findActiveCompanyUserIdsByCustomerId(int $idCustomer): array;
 
-    /**
-     * @param int $idCustomer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer|null
-     */
     public function findDefaultCompanyUserByCustomerId(int $idCustomer): ?CompanyUserTransfer;
 }
